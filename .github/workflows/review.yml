@@ -1,0 +1,16 @@
+name: review
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: review
+        run: test -f src/pilot.txt
